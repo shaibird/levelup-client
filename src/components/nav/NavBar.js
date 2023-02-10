@@ -3,17 +3,15 @@ import "./NavBar.css"
 
 export const NavBar = () => {
     const navigate = useNavigate()
+
     return (
-        <ul className="navbar">
-            <li className="navbar__item">
-                Navigation link
-            </li>
-            <li className="navbar__item">
-                Navigation link
-            </li>
-            <li className="navbar__item">
-                Navigation link
-            </li>
+        <nav className="navbar-container">
+            <nav className="nav-right">
+                <Link className="nav-right" to="/games">Games</Link>
+                <Link className="nav-right" to="/events">Events</Link>
+            </nav>
+            <img className="nav-logo"/>
+            <nav className="nav-left">
             {
                 (localStorage.getItem("lu_token") !== null) ?
                     <li className="nav-item">
@@ -32,6 +30,7 @@ export const NavBar = () => {
                             <Link className="nav-link" to="/register">Register</Link>
                         </li>
                     </>
-            }        </ul>
+            }        </nav>
+            </nav>
     )
 }
